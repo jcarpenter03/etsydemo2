@@ -1,5 +1,5 @@
 class OrdersController < ApplicationController
-  before_action :set_order, only: [:show, :edit, :update, :destroy]
+  before_action :set_order, only: [:show, :edit]
    before_filter :authenticate_user!
 
   respond_to :html
@@ -47,16 +47,6 @@ class OrdersController < ApplicationController
         format.json { render json: @order.errors, status: :unprocessable_entity }
       end
     end
-  end
-
-  def update
-    @order.update(order_params)
-    respond_with(@order)
-  end
-
-  def destroy
-    @order.destroy
-    respond_with(@order)
   end
 
   private
