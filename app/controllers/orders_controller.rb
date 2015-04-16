@@ -26,9 +26,6 @@ class OrdersController < ApplicationController
 
   end
 
-  def edit
-  end
-
   def create
     @order = Order.new(order_params)
     @listing = Listing.find(params[:listing_id])
